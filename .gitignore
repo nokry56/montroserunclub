@@ -1,0 +1,13 @@
+# Internal process docs — keep out of the public repo
+docs/superpowers/
+
+# OS / editor cruft
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Node / wrangler (no build, but just in case)
+node_modules/
+.wrangler/
+.dev.vars
