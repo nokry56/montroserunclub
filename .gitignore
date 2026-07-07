@@ -14,3 +14,8 @@ node_modules/
 
 # Deploy build artifact (clean copy of site files)
 dist/
+
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
