@@ -11,3 +11,6 @@ docs/superpowers/
 node_modules/
 .wrangler/
 .dev.vars
+
+# Deploy build artifact (clean copy of site files)
+dist/
