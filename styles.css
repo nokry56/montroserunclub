@@ -491,35 +491,11 @@ a { color: inherit; }
 .provide__name { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 0.98rem; letter-spacing: 0.01em; }
 .provide__desc { color: #cbd9e8; font-size: 0.95rem; margin-top: 0.15rem; }
 
-/* ---------- Duo Houston perk — 6th card ---------- */
-.provide__item--perk { display: block; padding: 0; border: none; background: none; }
-.perk {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.9rem;
-  height: 100%;
-  box-sizing: border-box;
-  padding: 1.4rem;
-  border-radius: 12px;
-  background: var(--cream);
-  color: var(--ink);
-  text-decoration: none;
-  border: 1px solid rgba(142, 194, 238, 0.25);
-  transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease);
-}
-.perk:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(7, 35, 65, 0.28); }
-.perk__logo { width: 132px; height: auto; }
-.perk__off {
-  font-family: var(--font-display);
-  font-stretch: 112%;
-  font-weight: 800;
-  text-transform: uppercase;
-  font-size: 1.02rem;
-  letter-spacing: 0.01em;
-  color: var(--blue);
-}
-.perk__desc { color: #3a4653; font-size: 0.9rem; margin-top: 0.2rem; line-height: 1.4; }
+/* ---------- Duo Houston perk — 6th card (clickable, same style as siblings) ---------- */
+.provide__item--duo { position: relative; cursor: pointer; transition: transform 0.18s var(--ease), border-color 0.18s var(--ease); }
+.provide__item--duo:hover { transform: translateY(-2px); border-color: rgba(142, 194, 238, 0.6); }
+.provide__stretch { position: absolute; inset: 0; border-radius: 12px; }
+.provide__stretch:focus-visible { outline: 3px solid #8ec2ee; outline-offset: 2px; }
 
 /* ---------- BRING + VIBES split ---------- */
 .split { display: grid; gap: clamp(2rem, 6vw, 4rem); grid-template-columns: 1fr; }

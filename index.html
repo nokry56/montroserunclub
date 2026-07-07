@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=3" />
+  <link rel="stylesheet" href="styles.css?v=4" />
 </head>
 <body>
   <a class="skip-link" href="#plan">Skip to content</a>
@@ -189,14 +189,15 @@
               <p class="provide__desc">Come as you are. Bring a friend.</p>
             </div>
           </li>
-          <li class="provide__item provide__item--perk">
-            <a class="perk" href="https://www.google.com/maps/search/?api=1&query=Duo+Houston+Autry+Park" target="_blank" rel="noopener">
-              <img class="perk__logo" src="assets/duo-houston.webp" alt="Duo Houston" width="150" height="84" />
-              <div class="perk__body">
-                <p class="perk__off">20% off after the run</p>
-                <p class="perk__desc">Hang out at Duo, Autry Park &mdash; just say you&rsquo;re with the club.</p>
-              </div>
-            </a>
+          <li class="provide__item provide__item--duo">
+            <span class="provide__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h11v12a4 4 0 0 1-4 4H9a4 4 0 0 1-4-4V4Z"/><path d="M16 7h2.4a2.5 2.5 0 0 1 0 5H16"/><path d="M5 9h11"/></svg>
+            </span>
+            <div>
+              <p class="provide__name">Post-run hangout</p>
+              <p class="provide__desc">Duo at Autry Park &mdash; 20% off when you&rsquo;re with the club.</p>
+            </div>
+            <a class="provide__stretch" href="https://www.google.com/maps/search/?api=1&query=Duo+Houston+Autry+Park" target="_blank" rel="noopener" aria-label="Duo Houston at Autry Park — 20% off with the run club"></a>
           </li>
         </ul>
       </div>
@@ -321,6 +322,6 @@
     <p class="footer__legal">&copy; 2026 Montrose Run Club</p>
   </footer>
 
-  <script src="app.js?v=3"></script>
+  <script src="app.js?v=4"></script>
 </body>
 </html>
