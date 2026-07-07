@@ -1,0 +1,35 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: {}
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    env:
+      # Empty until the repo secret is added — the deploy step skips gracefully.
+      CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Assemble site
+        run: |
+          mkdir -p dist
+          cp index.html styles.css app.js dist/
+          cp -R assets dist/assets
+
+      - name: Deploy to Cloudflare Pages
+        if: ${{ env.CF_API_TOKEN != '' }}
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 855c4d46a58f4aa82e3e88c01b8be470
+          command: pages deploy dist --project-name=montroserunclub --branch=main
+
+      - name: Note if secret missing
+        if: ${{ env.CF_API_TOKEN == '' }}
+        run: echo "::notice::Skipping deploy — add the CLOUDFLARE_API_TOKEN repo secret to enable auto-deploy."

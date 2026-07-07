@@ -35,10 +35,18 @@ once and submissions start flowing. The endpoint is set in `app.js`
 
 ## Deploy
 
-Hosted on Cloudflare Pages (direct upload), custom domain `montroserunclub.com`.
+Hosted on Cloudflare Pages, custom domain `montroserunclub.com`.
+
+**Auto-deploy:** every push to `main` triggers `.github/workflows/deploy.yml`,
+which assembles the site into `dist/` and runs `wrangler pages deploy` to the
+`montroserunclub` Pages project. Requires one repo secret:
+`CLOUDFLARE_API_TOKEN` (a token with the "Cloudflare Pages: Edit" permission).
+The Cloudflare account ID is set in the workflow. Until the secret is added the
+deploy step skips (no failed runs).
+
+**Manual deploy** (if ever needed):
 
 ```
-npx wrangler pages deploy . --project-name=montroserunclub
+mkdir -p dist && cp index.html styles.css app.js dist/ && cp -R assets dist/assets
+CLOUDFLARE_API_TOKEN=... npx wrangler pages deploy dist --project-name=montroserunclub --branch=main
 ```
-
-Requires a Cloudflare API token in the environment (`CLOUDFLARE_API_TOKEN`).

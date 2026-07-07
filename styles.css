@@ -185,7 +185,7 @@ a { color: inherit; }
   gap: 1rem;
   padding-block: 0.7rem;
 }
-.nav__logo img { height: 34px; width: auto; }
+.nav__logo img { height: 40px; width: auto; }
 .nav__links {
   display: flex;
   align-items: center;
@@ -235,6 +235,11 @@ a { color: inherit; }
     radial-gradient(1.5px 1.5px at 8% 74%, #cfe6fb 50%, transparent 51%);
 }
 .hero__inner { position: relative; z-index: 2; max-width: 760px; }
+.hero__wordmark {
+  width: clamp(260px, 44vw, 480px);
+  height: auto;
+  margin-bottom: clamp(1.5rem, 3.5vw, 2.3rem);
+}
 .hero__title {
   font-family: var(--font-display);
   font-weight: 900;
@@ -244,6 +249,17 @@ a { color: inherit; }
   text-transform: uppercase;
   margin-bottom: 1.4rem;
   text-wrap: balance;
+}
+.hero__tagline {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 3.2vw, 1.95rem);
+  line-height: 1.12;
+  letter-spacing: -0.005em;
+  color: #ffffff;
+  max-width: 24ch;
+  margin-bottom: 1.1rem;
 }
 .hero__lede {
   font-size: clamp(1.05rem, 2.4vw, 1.3rem);
@@ -417,6 +433,24 @@ a { color: inherit; }
 }
 .route--alt .route__tag { background: rgba(255,255,255,0.16); color: var(--white); }
 .route__desc { margin-top: 1rem; opacity: 0.92; }
+.route__strava {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1.2rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--blue);
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s var(--ease), gap 0.15s var(--ease);
+}
+.route__strava:hover { border-color: currentColor; gap: 0.6rem; }
+.route__strava--alt { color: #ffffff; }
 
 .banner {
   margin-top: 1.8rem;
@@ -461,6 +495,99 @@ a { color: inherit; }
 .provide__icon svg { width: 24px; height: 24px; }
 .provide__name { font-family: var(--font-display); font-weight: 700; text-transform: uppercase; font-size: 0.98rem; letter-spacing: 0.01em; }
 .provide__desc { color: #cbd9e8; font-size: 0.95rem; margin-top: 0.15rem; }
+
+/* ---------- AFTER THE RUN — Duo Houston perk ---------- */
+.after-run {
+  margin-top: clamp(2.2rem, 5vw, 3.4rem);
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+  grid-template-columns: 1fr;
+  align-items: center;
+  padding-top: clamp(2rem, 4vw, 2.6rem);
+  border-top: 1px solid rgba(142, 194, 238, 0.25);
+}
+@media (min-width: 820px) { .after-run { grid-template-columns: 1.1fr 0.9fr; } }
+.after-run__headline {
+  font-family: var(--font-display);
+  font-stretch: 112%;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 4vw, 2.1rem);
+  line-height: 1.02;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  color: #ffffff;
+  margin-bottom: 0.7rem;
+}
+.after-run__body { color: #dfeaf5; max-width: 42ch; }
+.after-run__link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8ec2ee;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.15s;
+}
+.after-run__link:hover { border-color: currentColor; }
+
+/* ticket-style perk pass */
+.pass {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 18px 44px rgba(7, 35, 65, 0.35);
+  max-width: 460px;
+}
+.pass__brand {
+  flex: 1 1 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.6rem 1.4rem;
+}
+.pass__logo { width: min(180px, 60vw); height: auto; }
+.pass__loc {
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #5b6b82;
+}
+.pass__perk {
+  flex: 1 1 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem 1.4rem;
+  background: var(--cream);
+  border-left: 2px dashed rgba(12, 58, 99, 0.28);
+  text-align: left;
+}
+.pass__off {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 900;
+  font-size: clamp(1.9rem, 5vw, 2.5rem);
+  line-height: 0.9;
+  color: var(--blue);
+  text-transform: uppercase;
+}
+.pass__cond { font-size: 0.85rem; color: var(--ink); line-height: 1.3; }
+@media (max-width: 460px) {
+  .pass__perk { border-left: none; border-top: 2px dashed rgba(12, 58, 99, 0.28); text-align: center; align-items: center; }
+  .pass__brand { flex-basis: 100%; }
+}
 
 /* ---------- BRING + VIBES split ---------- */
 .split { display: grid; gap: clamp(2rem, 6vw, 4rem); grid-template-columns: 1fr; }
@@ -661,6 +788,28 @@ a { color: inherit; }
 }
 .footer__logo { height: 46px; width: auto; }
 .footer__recap { font-family: var(--font-mono); font-size: 0.8rem; letter-spacing: 0.04em; color: #b9cee2; text-transform: uppercase; }
+.footer__social {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem 1.7rem;
+  margin-top: 0.3rem;
+}
+.footer__social a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #cfe0f0;
+  transition: color 0.15s;
+}
+.footer__social a:hover { color: #ffffff; }
+.footer__social svg { width: 20px; height: 20px; flex: none; }
 .footer__tag { font-family: var(--font-hand); font-size: 2rem; color: #8ec2ee; }
 .footer__legal { text-align: center; padding: 1.1rem; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: #6f8aa6; }
 
