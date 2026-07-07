@@ -24,11 +24,10 @@ jobs:
 
       - name: Deploy to Cloudflare Pages
         if: ${{ env.CF_API_TOKEN != '' }}
-        uses: cloudflare/wrangler-action@v3
-        with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          accountId: 855c4d46a58f4aa82e3e88c01b8be470
-          command: pages deploy dist --project-name=montroserunclub --branch=main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 855c4d46a58f4aa82e3e88c01b8be470
+        run: npx --yes wrangler@4 pages deploy dist --project-name=montroserunclub --branch=main --commit-dirty=true
 
       - name: Note if secret missing
         if: ${{ env.CF_API_TOKEN == '' }}
