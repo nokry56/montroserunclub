@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..900&family=Space+Mono:wght@400;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=3" />
 </head>
 <body>
   <a class="skip-link" href="#plan">Skip to content</a>
@@ -60,7 +60,7 @@
       </svg>
 
       <div class="wrap hero__inner">
-        <img class="hero__wordmark" src="assets/logo-white-crop.svg" alt="Montrose Run Club" width="440" height="148" />
+        <img class="hero__wordmark" src="assets/logo-wordmark.svg" alt="Montrose Run Club" width="440" height="148" />
         <p class="eyebrow eyebrow--light">// Houston, we run</p>
         <h1 class="hero__title" id="hero-title">Good people.<br />Great<br />miles.</h1>
         <p class="hero__tagline">A social club that meets Saturday mornings to train together.</p>
@@ -116,20 +116,20 @@
         <p class="eyebrow">// The plan</p>
         <h2 class="section__title" id="plan-title">Two routes. One start line.</h2>
         <div class="routes">
-          <article class="route">
-            <p class="route__dist">5K</p>
-            <p class="route__miles">~3.1 miles</p>
-            <p class="route__tag">All paces welcome</p>
-            <p class="route__desc">Walk it, jog it, run it. This one&rsquo;s for everybody.</p>
-            <a class="route__strava" href="https://www.strava.com/routes/3499608898545154466" target="_blank" rel="noopener">View 5K route on Strava &rarr;</a>
-          </article>
-          <article class="route route--alt">
-            <p class="route__dist">10K</p>
-            <p class="route__miles">~6.2 miles</p>
-            <p class="route__tag">Challenge yourself</p>
-            <p class="route__desc">A little more road for when you&rsquo;re feeling it.</p>
-            <a class="route__strava route__strava--alt" href="https://www.strava.com/routes/3499610916929058176" target="_blank" rel="noopener">View 10K route on Strava &rarr;</a>
-          </article>
+          <a class="route" href="https://www.strava.com/routes/3499608898545154466" target="_blank" rel="noopener">
+            <span class="route__dist">5K</span>
+            <span class="route__miles">~3.1 miles</span>
+            <span class="route__tag">All paces welcome</span>
+            <span class="route__desc">Walk it, jog it, run it. This one&rsquo;s for everybody.</span>
+            <span class="route__hint">Click card to view on Strava &rarr;</span>
+          </a>
+          <a class="route route--alt" href="https://www.strava.com/routes/3499610916929058176" target="_blank" rel="noopener">
+            <span class="route__dist">10K</span>
+            <span class="route__miles">~6.2 miles</span>
+            <span class="route__tag">Challenge yourself</span>
+            <span class="route__desc">A little more road for when you&rsquo;re feeling it.</span>
+            <span class="route__hint">Click card to view on Strava &rarr;</span>
+          </a>
         </div>
         <p class="banner">Both routes leave together. <strong>Nobody gets left behind.</strong></p>
       </div>
@@ -189,27 +189,16 @@
               <p class="provide__desc">Come as you are. Bring a friend.</p>
             </div>
           </li>
+          <li class="provide__item provide__item--perk">
+            <a class="perk" href="https://www.google.com/maps/search/?api=1&query=Duo+Houston+Autry+Park" target="_blank" rel="noopener">
+              <img class="perk__logo" src="assets/duo-houston.webp" alt="Duo Houston" width="150" height="84" />
+              <div class="perk__body">
+                <p class="perk__off">20% off after the run</p>
+                <p class="perk__desc">Hang out at Duo, Autry Park &mdash; just say you&rsquo;re with the club.</p>
+              </div>
+            </a>
+          </li>
         </ul>
-
-        <!-- After the run: Duo Houston perk -->
-        <div class="after-run">
-          <div class="after-run__text">
-            <p class="eyebrow eyebrow--light">// And after? We hang.</p>
-            <p class="after-run__headline">The run&rsquo;s just the launch.</p>
-            <p class="after-run__body">We roll over to <strong>Duo Houston</strong> at Autry Park to refuel and hang out. Tell them you&rsquo;re with the run club for 20% off.</p>
-            <a class="after-run__link" href="https://www.google.com/maps/search/?api=1&query=Duo+Houston+Autry+Park" target="_blank" rel="noopener">Find Duo at Autry Park &rarr;</a>
-          </div>
-          <div class="pass">
-            <div class="pass__brand">
-              <img class="pass__logo" src="assets/duo-houston.webp" alt="Duo Houston" width="200" height="112" />
-              <span class="pass__loc">Autry Park &middot; Houston</span>
-            </div>
-            <div class="pass__perk">
-              <span class="pass__off">20%<br />off</span>
-              <span class="pass__cond">Just say you&rsquo;re with the run club.</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -314,7 +303,7 @@
   <!-- ================= FOOTER ================= -->
   <footer class="footer">
     <div class="wrap footer__inner">
-      <img class="footer__logo" src="assets/logo-white-crop.svg" alt="Montrose Run Club" width="240" height="80" />
+      <img class="footer__logo" src="assets/logo-wordmark.svg" alt="Montrose Run Club" width="240" height="80" />
       <p class="footer__recap">3615 Alpha St, Houston&nbsp;TX &middot; 5K &amp; 10K &middot; Saturdays 7:30&nbsp;AM</p>
       <div class="footer__social">
         <a href="https://www.instagram.com/MontroseRunClubHTX/" target="_blank" rel="noopener" aria-label="Montrose Run Club on Instagram">
@@ -332,6 +321,6 @@
     <p class="footer__legal">&copy; 2026 Montrose Run Club</p>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=3"></script>
 </body>
 </html>

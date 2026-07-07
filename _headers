@@ -1,0 +1,15 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Always revalidate code files so updates show up immediately.
+/index.html
+  Cache-Control: public, max-age=0, must-revalidate
+/styles.css
+  Cache-Control: public, max-age=0, must-revalidate
+/app.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Images/logos are content-addressed by name; cache for an hour then revalidate.
+/assets/*
+  Cache-Control: public, max-age=3600, must-revalidate
